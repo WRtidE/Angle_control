@@ -74,5 +74,46 @@ static void trigger_mode_choose()
 }
 	
 ```
+# 减速比角度换算
+```C
+tatic void trigger_init()
+{
+		pid_init(&trigger_pid[2], 2,  0, 1, 16384, 16384);	
+	
+		motor_info[2].last_angle = motor_info[2].rotor_angle; //初始化，令之前角度==当前角度
+		
+}
 
+//2006电机处理函数，将减速比消除
+static void motor_2006_calc(uint16_t i)
+{
+	angle_dif = motor_info[i].rotor_angle - motor_info[i].last_angle;  //2006转过的角度差
+	motor_info[i].last_angle = motor_info[i].rotor_angle;              //记录上次的角度
+	
+	//越界处理
+        if(angle_dif>8191/2)
+	{
+		angle_dif -= 8191;
+	}
+	else if(angle_dif<- 8191/2)
+	{
+		angle_dif +=8191;
+	}
+	
+	angle_dif/=36;               //减速比  把2006的角度差转换为拨爪的角度差
+	
+	trigger_angle += angle_dif;  //角度差累加,得到拨爪的绝对角度
+	
+        //越界处理
+	if(trigger_angle>8191)
+	{
+		trigger_angle -= 8191;
+	}
+	else if(trigger_angle<0)
+	{
+		trigger_angle +=8191;
+	}
+																
+}
+```
 
