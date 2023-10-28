@@ -1,0 +1,111 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.24.2.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Akaset WRtidE, Akaset, LIC=21E4T-RT1AL-01AP1-CQRIM-2UWX1-RC4PR
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.24.1
+Toolchain Path:  F:\DownLoad\Keil5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
+Dialog DLL:      TCM.DLL V1.32.0.0
+ 
+<h2>Project:</h2>
+C:\Users\WRtidE\Desktop\angle_control\angle_test\MDK-ARM\YX_UP.uvprojx
+Project File Date:  10/28/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'F:\DownLoad\Keil5\ARM\ARMCC\Bin'
+Build target 'YX_UP'
+compiling Friction_task.c...
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(51): warning:  #47-D: incompatible redefinition of macro "__FPU_PRESENT" 
+  #define __FPU_PRESENT             1U       /*!< FPU present                                   */
+../Drivers/CMSIS/Include/core_cm4.h(79): warning:  #47-D: incompatible redefinition of macro "__FPU_USED" 
+        #define __FPU_USED       1U
+..\User\PotocaLayer\remote_control.h(68): warning:  #1295-D: Deprecated declaration Get_minipc - give arg types
+  extern void Get_minipc();
+../User/PID.h(18): warning:  #1-D: last line of file ends without a newline
+  							
+..\User\DriverLayer\Can_user.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\User\Task\Exchange_task.h(31): warning:  #1295-D: Deprecated declaration Get_keyboard - give arg types
+  void Get_keyboard();
+..\User\Task\Friction_task.c(48): warning:  #1295-D: Deprecated declaration Friction_init - give arg types
+  static void Friction_init();
+..\User\Task\Friction_task.c(51): warning:  #1295-D: Deprecated declaration model_choice - give arg types
+  static void model_choice();
+..\User\Task\Friction_task.c(55): warning:  #1295-D: Deprecated declaration magazine_task - give arg types
+  static void magazine_task();
+..\User\Task\Friction_task.c(56): warning:  #1295-D: Deprecated declaration magazine_init - give arg types
+  static void magazine_init();
+..\User\Task\Friction_task.c(59): warning:  #1295-D: Deprecated declaration heat_limit - give arg types
+  static void heat_limit();
+..\User\Task\Friction_task.c(62): warning:  #1295-D: Deprecated declaration shoot_data_send - give arg types
+  static void shoot_data_send();
+..\User\Task\Friction_task.c(65): warning:  #1295-D: Deprecated declaration laser_init - give arg types
+  static void laser_init();
+..\User\Task\Friction_task.c(67): warning:  #1295-D: Deprecated declaration friction_enable - give arg types
+  static void friction_enable();
+..\User\Task\Friction_task.c(68): warning:  #1295-D: Deprecated declaration friction_disable - give arg types
+  static void friction_disable();
+..\User\Task\Friction_task.c(70): warning:  #1295-D: Deprecated declaration friction_flag_change - give arg types
+  static void friction_flag_change();
+..\User\Task\Friction_task.c(73): warning:  #1295-D: Deprecated declaration trigger_init - give arg types
+  static void trigger_init();
+..\User\Task\Friction_task.c(74): warning:  #1295-D: Deprecated declaration trigger_task - give arg types
+  static void trigger_task();
+..\User\Task\Friction_task.c(78): warning:  #1295-D: Deprecated declaration shoot_speed_choice - give arg types
+  static void shoot_speed_choice();
+..\User\Task\Friction_task.c(80): warning:  #1295-D: Deprecated declaration trigger_mode_choose - give arg types
+  static void trigger_mode_choose();
+..\User\Task\Friction_task.c(98): warning:  #111-D: statement is unreachable
+    osDelay(1);
+..\User\Task\Friction_task.c(331): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	  if(infantry.shooter_heat > infantry.heat_limit * 0.9)
+..\User\Task\Friction_task.c(287): warning:  #177-D: function "magazine_task"  was declared but never referenced
+  static void magazine_task()
+..\User\Task\Friction_task.c(322): warning:  #177-D: function "heat_limit"  was declared but never referenced
+  static void heat_limit()
+..\User\Task\Friction_task.c(109): warning:  #177-D: function "laser_init"  was declared but never referenced
+  static void laser_init()
+..\User\Task\Friction_task.c: 25 warnings, 0 errors
+linking...
+Program Size: Code=41718 RO-data=638 RW-data=732 ZI-data=21572  
+FromELF: creating hex file...
+"YX_UP\YX_UP.axf" - 0 Error(s), 25 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.0.1.pack
+                ARM.CMSIS.5.0.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.0.1
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil.STM32F4xx_DFP.2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_YX_UP
+  F:\DownLoad\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include
+  F:\DownLoad\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.0.1
+Build Time Elapsed:  00:00:05
+</pre>
+</body>
+</html>
